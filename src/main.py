@@ -32,3 +32,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Samuel Constantino <samuelicapuidados@gmail.com>
