@@ -6,7 +6,7 @@ def get_values_list_key(dict_list, key):
     return set(values_list)
 
 
-def get_frequency_key_person(dict_list, key, person):
+def get_frequency_person(dict_list, key, person):
     dict_frequency = {}
     for item in dict_list:
         if item['name'] == person:
@@ -23,7 +23,7 @@ def analyze_log(path_to_file):
     foods_list = get_values_list_key(dict_list, 'food')
     open_days = get_values_list_key(dict_list, 'day')
 
-    food_frequency_maria = get_frequency_key_person(dict_list, 'food', 'maria')
+    food_frequency_maria = get_frequency_person(dict_list, 'food', 'maria')
     bigger_frequency_maria_food = max(food_frequency_maria.values())
     most_frequent_maria_food = next(
         food[0]
@@ -31,9 +31,9 @@ def analyze_log(path_to_file):
         if food[1] == bigger_frequency_maria_food
     )
 
-    food_frequency_arnaldo = get_frequency_key_person(dict_list, 'food', 'arnaldo')
-    food_frequency_joao = get_frequency_key_person(dict_list, 'food', 'joao')
-    day_frequency_joao = get_frequency_key_person(dict_list, 'day', 'joao')
+    food_frequency_arnaldo = get_frequency_person(dict_list, 'food', 'arnaldo')
+    food_frequency_joao = get_frequency_person(dict_list, 'food', 'joao')
+    day_frequency_joao = get_frequency_person(dict_list, 'day', 'joao')
 
     difference_joao = foods_list.difference(food_frequency_joao)
     days_difference_joao = open_days.difference(day_frequency_joao)
